@@ -25,18 +25,18 @@ function Slides({ slides }) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     function changeSlide(num) {
-        if (state.count == 0) {
+        if (state.count == 1) {
             prv.current.disabled = true;
         }
 
-        if (state.count == 4) {
+        if (state.count == (slides.length - 2)) {
             nxt.current.disabled = true;
         }
 
         if (num == 1 && state.count > 0) {
             nxt.current.disabled = false;
             dispatch({ type: 'decremented' });
-        } else if (num == 2 && state.count < 4) {
+        } else if (num == 2 && state.count < (slides.length - 1)) {
             prv.current.disabled = false;
             dispatch({ type: 'incremented' });
         } else if (num == 0) {

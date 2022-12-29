@@ -64,8 +64,8 @@ function Slides({ slides }) {
                 <button data-testid="button-next" ref={nxt} className="small" onClick={() => changeSlide(2)}>Next</button>
             </div>
             <div id="slide" className="card text-center">
-                <h1 >{slides[state.count]['title']}</h1>
-                <p >{slides[state.count]['text']}</p>
+                <h1 data-testid="title">{slides[state.count]['title']}</h1>
+                <p data-testid="text">{slides[state.count]['text']}</p>
             </div>
         </div>
     );
